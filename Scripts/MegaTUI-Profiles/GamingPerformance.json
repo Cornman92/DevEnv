@@ -1,0 +1,18 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Guru3D.RTSS" },
+        { "PackageIdentifier": "Guru3D.Afterburner" },
+        { "PackageIdentifier": "REALiX.HWiNFO" },
+        { "PackageIdentifier": "CPUID.CPU-Z" },
+        { "PackageIdentifier": "TechPowerUp.GPU-Z" },
+        { "PackageIdentifier": "CXWorld.CapFrameX" },
+        { "PackageIdentifier": "BitSum.ProcessLasso" },
+        { "PackageIdentifier": "Rem0o.FanControl" },
+        { "PackageIdentifier": "CoderBag.QuickCPUx64" },
+        { "PackageIdentifier": "TechPowerUp.NVCleanstall" }
+      ]
+    }
+  ]
+}

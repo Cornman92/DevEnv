@@ -1,0 +1,16 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Microsoft.VisualStudioCode" },
+        { "PackageIdentifier": "Nodejs.Nodejs" },
+        { "PackageIdentifier": "Git.Git" },
+        { "PackageIdentifier": "Mozilla.Firefox" },
+        { "PackageIdentifier": "Google.Chrome" },
+        { "PackageIdentifier": "Postman.Postman" },
+        { "PackageIdentifier": "Figma.Figma" },
+        { "PackageIdentifier": "Docker.DockerDesktop" }
+      ]
+    }
+  ]
+}

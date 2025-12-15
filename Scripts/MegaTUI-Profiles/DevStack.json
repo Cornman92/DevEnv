@@ -1,0 +1,16 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Microsoft.VisualStudioCode" },
+        { "PackageIdentifier": "Git.Git" },
+        { "PackageIdentifier": "GitHub.GitHubDesktop" },
+        { "PackageIdentifier": "Nodejs.Nodejs" },
+        { "PackageIdentifier": "Python.Python.3.11" },
+        { "PackageIdentifier": "Docker.DockerDesktop" },
+        { "PackageIdentifier": "Postman.Postman" },
+        { "PackageIdentifier": "JetBrains.IntelliJIDEA.Community" }
+      ]
+    }
+  ]
+}

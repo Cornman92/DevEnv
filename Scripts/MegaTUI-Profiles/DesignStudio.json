@@ -1,0 +1,18 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Figma.Figma" },
+        { "PackageIdentifier": "GIMP.GIMP" },
+        { "PackageIdentifier": "BlenderFoundation.Blender" },
+        { "PackageIdentifier": "Paint.NET.Paint.NET" },
+        { "PackageIdentifier": "ImageMagick.ImageMagick" },
+        { "PackageIdentifier": "OBSProject.OBSStudio" },
+        { "PackageIdentifier": "Reaper.Reaper" },
+        { "PackageIdentifier": "Audacity.Audacity" },
+        { "PackageIdentifier": "VideoLAN.VLC" },
+        { "PackageIdentifier": "HandBrake.HandBrake" }
+      ]
+    }
+  ]
+}

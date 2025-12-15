@@ -1,0 +1,18 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Docker.DockerDesktop" },
+        { "PackageIdentifier": "Kubernetes.kubectl" },
+        { "PackageIdentifier": "Helm.Helm" },
+        { "PackageIdentifier": "AWS.AWSCLI" },
+        { "PackageIdentifier": "Google.CloudSDK" },
+        { "PackageIdentifier": "Microsoft.AzureCLI" },
+        { "PackageIdentifier": "Vagrant.Vagrant" },
+        { "PackageIdentifier": "Git.Git" },
+        { "PackageIdentifier": "Microsoft.VisualStudioCode" },
+        { "PackageIdentifier": "Postman.Postman" }
+      ]
+    }
+  ]
+}

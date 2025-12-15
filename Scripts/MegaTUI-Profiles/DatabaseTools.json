@@ -1,0 +1,16 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "DBeaver.DBeaver" },
+        { "PackageIdentifier": "TablePlus.TablePlus" },
+        { "PackageIdentifier": "HeidiSQL.HeidiSQL" },
+        { "PackageIdentifier": "PostgreSQL.PostgreSQL" },
+        { "PackageIdentifier": "MongoDB.Server" },
+        { "PackageIdentifier": "MySQL.MySQLServer" },
+        { "PackageIdentifier": "Redis.Redis" },
+        { "PackageIdentifier": "Microsoft.SQLServer.Developer" }
+      ]
+    }
+  ]
+}

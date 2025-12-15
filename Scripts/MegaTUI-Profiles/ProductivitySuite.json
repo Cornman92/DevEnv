@@ -1,0 +1,16 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "LibreOffice.LibreOffice" },
+        { "PackageIdentifier": "Mozilla.Firefox" },
+        { "PackageIdentifier": "Microsoft.PowerToys" },
+        { "PackageIdentifier": "Obsidian.Obsidian" },
+        { "PackageIdentifier": "Notion.Notion" },
+        { "PackageIdentifier": "Typora.Typora" },
+        { "PackageIdentifier": "Todoist.Todoist" },
+        { "PackageIdentifier": "7zip.7zip" }
+      ]
+    }
+  ]
+}

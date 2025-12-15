@@ -1,0 +1,13 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Google.Chrome" },
+        { "PackageIdentifier": "7zip.7zip" },
+        { "PackageIdentifier": "Microsoft.PowerToys" },
+        { "PackageIdentifier": "VideoLAN.VLC" },
+        { "PackageIdentifier": "Microsoft.WindowsTerminal" }
+      ]
+    }
+  ]
+}

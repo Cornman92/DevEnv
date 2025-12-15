@@ -1,0 +1,17 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Valve.Steam" },
+        { "PackageIdentifier": "EpicGames.EpicGamesLauncher" },
+        { "PackageIdentifier": "Discord.Discord" },
+        { "PackageIdentifier": "Guru3D.RTSS" },
+        { "PackageIdentifier": "Guru3D.Afterburner" },
+        { "PackageIdentifier": "REALiX.HWiNFO" },
+        { "PackageIdentifier": "CPUID.CPU-Z" },
+        { "PackageIdentifier": "TechPowerUp.GPU-Z" },
+        { "PackageIdentifier": "XPDM5VSMTKQLBJ" }
+      ]
+    }
+  ]
+}

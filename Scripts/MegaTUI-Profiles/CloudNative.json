@@ -1,0 +1,18 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Docker.DockerDesktop" },
+        { "PackageIdentifier": "Kubernetes.kubectl" },
+        { "PackageIdentifier": "Helm.Helm" },
+        { "PackageIdentifier": "Microsoft.VisualStudioCode" },
+        { "PackageIdentifier": "Git.Git" },
+        { "PackageIdentifier": "AWS.AWSCLI" },
+        { "PackageIdentifier": "Google.CloudSDK" },
+        { "PackageIdentifier": "Microsoft.AzureCLI" },
+        { "PackageIdentifier": "Terraform.Terraform" },
+        { "PackageIdentifier": "Ansible.Ansible" }
+      ]
+    }
+  ]
+}

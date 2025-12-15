@@ -1,0 +1,15 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Python.Python.3.11" },
+        { "PackageIdentifier": "Microsoft.VisualStudioCode" },
+        { "PackageIdentifier": "Jupyter.JupyterLab" },
+        { "PackageIdentifier": "Git.Git" },
+        { "PackageIdentifier": "PostgreSQL.PostgreSQL" },
+        { "PackageIdentifier": "MongoDB.Server" },
+        { "PackageIdentifier": "DBeaver.DBeaver" }
+      ]
+    }
+  ]
+}

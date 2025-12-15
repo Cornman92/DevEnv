@@ -1,0 +1,17 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "7zip.7zip" },
+        { "PackageIdentifier": "Microsoft.PowerToys" },
+        { "PackageIdentifier": "voidtools.Everything" },
+        { "PackageIdentifier": "CrystalDewWorld.CrystalDiskInfo" },
+        { "PackageIdentifier": "CPUID.CPU-Z" },
+        { "PackageIdentifier": "Rufus.Rufus" },
+        { "PackageIdentifier": "Microsoft.Sysinternals.ProcessMonitor" },
+        { "PackageIdentifier": "Microsoft.Sysinternals.Autoruns" },
+        { "PackageIdentifier": "AntibodySoftware.WizTree" }
+      ]
+    }
+  ]
+}

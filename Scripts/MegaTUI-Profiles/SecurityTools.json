@@ -1,0 +1,17 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "WiresharkFoundation.Wireshark" },
+        { "PackageIdentifier": "Insecure.Nmap" },
+        { "PackageIdentifier": "OpenVPNTechnologies.OpenVPN" },
+        { "PackageIdentifier": "NordVPN.NordVPN" },
+        { "PackageIdentifier": "Sandboxie.Sandboxie" },
+        { "PackageIdentifier": "Microsoft.Sysinternals.ProcessMonitor" },
+        { "PackageIdentifier": "Microsoft.Sysinternals.Autoruns" },
+        { "PackageIdentifier": "BiniSoft.WindowsFirewallControl" },
+        { "PackageIdentifier": "Henry++.simplewall" }
+      ]
+    }
+  ]
+}

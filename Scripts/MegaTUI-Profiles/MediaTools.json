@@ -1,0 +1,16 @@
+{
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Spotify.Spotify" },
+        { "PackageIdentifier": "VideoLAN.VLC" },
+        { "PackageIdentifier": "Audacity.Audacity" },
+        { "PackageIdentifier": "GIMP.GIMP" },
+        { "PackageIdentifier": "OBSProject.OBSStudio" },
+        { "PackageIdentifier": "Gyan.FFmpeg" },
+        { "PackageIdentifier": "BlenderFoundation.Blender" },
+        { "PackageIdentifier": "HandBrake.HandBrake" }
+      ]
+    }
+  ]
+}
