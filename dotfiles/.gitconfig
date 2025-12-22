@@ -1,0 +1,197 @@
+# DevEnv Git Configuration Template
+# Copy this to ~/.gitconfig and customize with your information
+
+[user]
+    # Replace with your name and email
+    name = Your Name
+    email = your.email@example.com
+
+[core]
+    editor = vim
+    autocrlf = input
+    safecrlf = warn
+    excludesfile = ~/.gitignore_global
+    whitespace = trailing-space,space-before-tab
+    pager = less -FRX
+    filemode = false
+
+[init]
+    defaultBranch = main
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+
+[alias]
+    # Basic shortcuts
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    df = diff
+    dc = diff --cached
+
+    # Commit shortcuts
+    cm = commit -m
+    ca = commit --amend
+    can = commit --amend --no-edit
+
+    # Log aliases
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ll = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    last = log -1 HEAD --stat
+
+    # Show current branch
+    current = rev-parse --abbrev-ref HEAD
+
+    # Stash shortcuts
+    ss = stash save
+    sp = stash pop
+    sl = stash list
+
+    # Branch operations
+    branches = branch -a
+    tags = tag -l
+    remotes = remote -v
+
+    # Quick view
+    who = shortlog -s --
+    changed = show --pretty='format:' --name-only
+
+    # Undo operations
+    undo = reset --soft HEAD^
+    unstage = reset HEAD --
+    uncommit = reset --soft HEAD~1
+
+    # Working with changes
+    discard = checkout --
+    amend = commit --amend --no-edit
+
+    # Status shortcuts
+    s = status -s
+    stat = status
+
+    # Pull/Push
+    pl = pull
+    ps = push
+    psu = push -u origin HEAD
+
+    # Fetch
+    f = fetch
+    fa = fetch --all
+
+    # Rebase
+    rb = rebase
+    rbc = rebase --continue
+    rba = rebase --abort
+
+    # Cherry-pick
+    cp = cherry-pick
+
+    # Diff shortcuts
+    d = diff
+    ds = diff --staged
+    dn = diff --name-only
+
+    # Show contributors
+    contributors = shortlog --summary --numbered
+
+    # Find commits by message
+    find = log --all --oneline --grep
+
+    # Find files in git history
+    findfile = "!git log --all --full-history -- \"**/*$1*\""
+
+    # Clean up merged branches
+    cleanup = "!git branch --merged | grep -v '\\*\\|master\\|main\\|develop' | xargs -n 1 git branch -d"
+
+    # Show ignored files
+    ignored = ls-files --others -i --exclude-standard
+
+    # Aliases
+    aliases = config --get-regexp alias
+
+[push]
+    default = simple
+    followTags = true
+    autoSetupRemote = true
+
+[pull]
+    rebase = false
+    ff = only
+
+[fetch]
+    prune = true
+    pruneTags = true
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+    ff = false
+
+[mergetool]
+    prompt = false
+    keepBackup = false
+
+[diff]
+    tool = vimdiff
+    algorithm = patience
+    compactionHeuristic = true
+
+[difftool]
+    prompt = false
+
+[branch]
+    autoSetupMerge = always
+    autoSetupRebase = always
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[help]
+    autocorrect = 1
+
+[credential]
+    helper = cache --timeout=3600
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[url "https://github.com/"]
+    insteadOf = gh:
+
+[url "https://gitlab.com/"]
+    insteadOf = gl:
+
+[url "https://bitbucket.org/"]
+    insteadOf = bb:
+
+# Include additional local config
+[include]
+    path = ~/.gitconfig.local

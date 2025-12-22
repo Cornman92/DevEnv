@@ -1,0 +1,177 @@
+version: '3.9'
+
+services:
+  devenv:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        USERNAME: developer
+        USER_UID: 1000
+        USER_GID: 1000
+
+    image: devenv:latest
+    container_name: devenv
+
+    # Keep container running
+    command: sleep infinity
+
+    # Interactive terminal
+    stdin_open: true
+    tty: true
+
+    # Environment variables
+    environment:
+      - TERM=xterm-256color
+      - COLORTERM=truecolor
+
+    # Mount current directory to /workspace
+    volumes:
+      # Workspace
+      - ../:/workspace:cached
+
+      # Persist shell history
+      - bash_history:/home/developer/.bash_history
+      - zsh_history:/home/developer/.zsh_history
+
+      # Persist tool configurations
+      - pyenv_data:/home/developer/.pyenv
+      - nvm_data:/home/developer/.nvm
+      - cargo_data:/home/developer/.cargo
+      - go_data:/home/developer/go
+
+      # Git configuration
+      - ~/.gitconfig:/home/developer/.gitconfig:ro
+      - ~/.ssh:/home/developer/.ssh:ro
+
+      # Docker socket for Docker-in-Docker (optional, uncomment if needed)
+      # - /var/run/docker.sock:/var/run/docker.sock
+
+    # Network mode
+    network_mode: bridge
+
+    # Expose common development ports
+    ports:
+      - "3000:3000"   # Node.js/React default
+      - "5000:5000"   # Flask/Python default
+      - "8000:8000"   # Django/FastAPI default
+      - "8080:8080"   # Alternative web port
+      - "9000:9000"   # Additional port
+      - "5432:5432"   # PostgreSQL
+      - "3306:3306"   # MySQL
+      - "6379:6379"   # Redis
+      - "27017:27017" # MongoDB
+
+    # Resource limits (adjust based on your system)
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+        reservations:
+          cpus: '2'
+          memory: 4G
+
+    # Healthcheck
+    healthcheck:
+      test: ["CMD", "zsh", "-c", "echo 'healthy'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    # Security options
+    security_opt:
+      - seccomp:unconfined
+
+    # Restart policy
+    restart: unless-stopped
+
+    # Labels
+    labels:
+      com.devenv.description: "DevEnv Development Container"
+      com.devenv.version: "0.1.0"
+
+  # Optional: PostgreSQL database service
+  postgres:
+    image: postgres:16-alpine
+    container_name: devenv-postgres
+    environment:
+      POSTGRES_USER: developer
+      POSTGRES_PASSWORD: devpass
+      POSTGRES_DB: devdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+    profiles:
+      - database
+      - full
+
+  # Optional: MySQL database service
+  mysql:
+    image: mysql:8.3
+    container_name: devenv-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: devdb
+      MYSQL_USER: developer
+      MYSQL_PASSWORD: devpass
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    restart: unless-stopped
+    profiles:
+      - database
+      - full
+
+  # Optional: Redis cache service
+  redis:
+    image: redis:7-alpine
+    container_name: devenv-redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6380:6379"
+    restart: unless-stopped
+    profiles:
+      - cache
+      - full
+
+  # Optional: MongoDB database service
+  mongodb:
+    image: mongo:7
+    container_name: devenv-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: developer
+      MONGO_INITDB_ROOT_PASSWORD: devpass
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27018:27017"
+    restart: unless-stopped
+    profiles:
+      - database
+      - full
+
+# Named volumes for data persistence
+volumes:
+  bash_history:
+  zsh_history:
+  pyenv_data:
+  nvm_data:
+  cargo_data:
+  go_data:
+  postgres_data:
+  mysql_data:
+  redis_data:
+  mongodb_data:
+
+# Networks (using default bridge for simplicity)
+networks:
+  default:
+    name: devenv-network
+    driver: bridge
